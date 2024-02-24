@@ -1,0 +1,207 @@
+// Utils 
+
+* {
+    box-sizing: border-box;
+    font-size: 62.5%; // 1 rem = 10px, easy maths 
+}
+
+
+body {
+    margin: 3rem;
+}
+
+// Imports
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+// Typography
+
+* {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.heading {
+    margin: 0;
+    padding: 0;
+    color: #ff6c1a;
+    font-weight: bold;
+    text-transform: capitalize;
+    &--secondary {
+        @extend .heading;
+        font-size: 3.5rem;
+    }
+    &--primary {
+        @extend .heading;
+        font-size: 5rem;
+    }
+}
+
+span.copy,
+p.copy {
+    font-weight: normal;
+    font-size: 1.8rem;
+    margin: 0;
+    &--light {
+        @extend .copy;
+        color: #fff;
+    }
+    &--dark {
+        @extend .copy;
+        color: rgb(60, 60, 60);
+    }
+}
+
+// Classes
+
+.img-back {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+// Components
+
+.list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    &_item {
+        display: inline-block;
+        &:not(:last-of-type){
+            margin-right: 2rem;
+        }
+    }
+    &_link {
+        font-size: 1.8rem;
+        text-decoration: none;
+        transition: all .5s;
+        text-transform: capitalize;
+        > span {
+            font-size: 1.8rem;
+        }
+        &:hover {
+            transition: all .5s;
+        }
+    }
+}
+
+header {
+    background-image: url(../../img/hero.webp);
+    background-attachment: fixed;
+    height: calc(100vh - 3rem);
+    padding: 3rem 0;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        // background: linear-gradient(90deg, rgba(25,42,68,1) 0%, rgba(25,42,68,0) 100%);
+        background: linear-gradient(90deg, rgba(29,29,112,1) 0%, rgba(29,29,112,0) 100%);
+    }
+}
+
+.header {
+    &_navigation {
+        display: flex;
+        justify-content: flex-end;
+        ul {
+            position: relative;
+            z-index: 1;
+            li a {
+                color: #fff;
+                font-weight: bold;
+                padding: 1rem;
+                border-radius: 1.5rem;
+                &:hover {
+                    background: rgba(29,29,112,1);
+                    color: #fff;
+                }
+            }
+        }
+    }
+    &_promo {
+        position: absolute;
+        z-index: 1;
+        left: 3rem;
+        bottom: 3rem;
+        > h1 {
+            margin-bottom: 1.5rem;
+        }
+    }
+}
+
+.footer {
+    margin-top: 3rem;
+    &_links {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        > img {
+            height: 20rem;
+            width: 25rem;
+        }
+        ion-icon {
+            font-size: 3rem;
+            color: #ff6c1a;
+            transition: all .5s;
+            &:hover {
+                transform: translateY(-.5rem);
+                transition: all .5s;
+            }
+        }
+    }
+    &_info {
+        display: flex;
+        div {
+            width: 50%;
+        }
+        div:first-of-type {
+            margin-right: 1.5rem;
+        }
+        div:last-of-type {
+            margin-left: 1.5rem;
+        }
+    }
+    &_site-links {
+        margin: 3rem 0;
+        text-align: center;
+        ul li a {
+            color: rgba(29,29,112,1);
+        }
+    }
+    &_base {
+        margin-top: 3rem;
+        background: rgba(29,29,112,1);
+        padding: 3rem 0;
+        text-align: center;
+    }
+}
+
+
+
+
+// Swiper 
+.swiper {
+    width: 600px;
+    height: 300px;
+}
+
+.swiper-slide {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    > img {
+        height: 15rem;
+        width: 30rem;
+    }
+}
